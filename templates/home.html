@@ -1,0 +1,61 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %} 
+    <div class="intro">
+        <img class="intro-img" src="{% static 'images/guy.jpg' %}" alt="">
+        <div class="text-img">
+            <h1 class="a">Lets Argue</h1>
+            <h1 class="b">Lets Conflict</h1>
+            <h1 class="c">Not for your sake</h1>
+            <h1 class="d">Not for my sake</h1>
+            <h1 class="e">But for our sake</h1>
+            <h1 class="f">D R I V E          C H A N G E</h1>
+        </div>
+    </div>
+    <div class="mid">
+        <h1 class="g">For Far To Long Conflict Has Been Painted As Something Negative</h1>
+        <h1 class="h">THIS IS NOT CONFLICT</h1>
+        <div class="mid-img">
+            <img class="anger" src="{% static 'images/anger.jpg' %}" alt="">
+            <img class="angery" src="{% static 'images/angery.jpg' %}" alt="">
+            <img class="pointing" src="{% static 'images/pointing.jpg' %}" alt="">
+        </div>
+        <h1 class="i">THIS IS ANGER</h1>
+        <h1 class="j">THERE IS FRUSTRATION</h1>
+        <h1 class="k">THIS IS VIOLENCE</h1>
+        <h1 class="l">THERE IS NO ENEMY</h1>
+        <h1 class="m">THERE IS ONLY PASSION</h1>
+        <h1 class="n">THERE IS ONLY PERSPECTIVE</h1>
+        <h1 class="o">THERE IS ONLY DIVERSITY</h1>
+        <h1 class="p">THERE IS ONLY DIFFERENCE</h1>
+        <h1 class="q">THERE IS ONLY US</h1>
+    </div>
+    <div class="then">
+        <h1 class="s">R  E  D  E  F  I  N  E</h1>
+        <h1 class="r">THIS IS CONFLICT</h1>
+        <div class="then-img">
+            <img class="img-1" src="{% static 'images/this_conflict.jpg' %}" alt="">
+            <img class="img-2" src="{% static 'images/this_conflict1.jpg' %}" alt="">
+            <img class="img-4" src="{% static 'images/listen.jpg' %}" alt="">
+        </div>
+        <div class="then-text">
+            <h1 class="t">WHEN WE...<br><br> LEARN</h1>
+            <h1 class="u">LISTEN</h1>
+            <h1 class="v">ACKNOWLEDGE</h1>
+            <h1 class="w">AGREE</h1>
+            <h1 class="x">DISAGREE</h1>
+            <h1 class="y">REFLECT</h1>
+            <h1 class="z">MOVE FOWARD</h1>
+        </div>
+    </div>
+    <div class="end">
+        <img class="img-5" src="{% static 'images/weather.jpeg' %}" alt="">
+        <div class="bod">
+            <h1 class="join">SO JOIN THE CONFLICT</h1>
+            <h1>IT STARTS TODAY NOT TOMORROW</h1>
+            <h1>DRIVE CHANGE</h1>
+            <a href="{% url 'conflict:all-top' %}">JOIN</a>
+        </div>
+    </div>
+{% endblock %}

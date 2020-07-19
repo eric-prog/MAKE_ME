@@ -1,0 +1,109 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="out">
+        <div class="in">
+            <h2>{{ arg.title }}</h2>
+            <p>{{ arg.body }}</p>
+        </div>
+        <form class="com-form" method="post" action="{% url 'conflict:detail' slug=arg.slug %}">
+            <h1>What are Your Thoughts?</h1>
+            <div class="rec">
+                <div class="rem">
+                    <p>I agree with...</p>
+                    <p>I don't agree with...</p>
+                    <p>Could you elborate?</p>
+                    <p>That is rude to... because...</p>
+                    <p>There are people doing... don't forget...</p>
+                    <p>I strongly disagree because..so I believe...</p>
+                    <p>Can you help me understand why...</p>
+                </div>
+            </div>
+            {% csrf_token %}
+            {{ form }}<br>
+            <button class="btnPost">Post</button>
+        </form>
+    </div>
+    {% for comment in comments %}
+        {% if comment.slug == arg.slug %}
+            <div class="comment">
+                <h2>{{ comment.title }}</h2>
+                <p>{{ comment.body }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <style>
+        .out{
+            width: 100%;
+            text-align: center;
+            background-color: rgb(255, 236, 127);
+        }
+        .out .com-form input{
+            width: 100%;
+            margin-top: 4%;
+            margin-bottom: 2%;
+            font-size: 2em;
+        }
+        .out .com-form .rec{
+            width: 100%;
+            margin-bottom: 3%;
+            text-align: center;
+        }
+        .out .com-form .rec p{
+            border-radius: 20px;
+            background-color: darkorange;
+            color: #fff;
+            padding: 1.2%;
+            display: inline-block;
+            font-family: 'arial';
+            font-size: 1em;
+        }
+        .out .com-form h1{
+            margin-bottom: 5%;
+        }
+        .out .com-form{
+            padding: 5%;
+            background-color: rgb(0, 217, 255);
+            display: inline-block;
+            width: 50%;
+            font-size: 1em;
+            margin-bottom: 4%;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Sora', sans-serif;
+            border-radius: 50px;
+        }
+        .out .com-form button{
+            background-color: rgb(77, 139, 255);
+            color: #fff;
+            border: none;
+            width: 15%;
+            border-radius: 20px;
+            font-size: 1em;
+            padding: 2%;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Sora', sans-serif;
+        }
+        .out .in{
+            padding: 4%;
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Sora', sans-serif;
+            color: #000;
+        }
+        .comment{
+            border-radius: 10px;
+            margin: 2%;
+            width: 94%;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Sora', sans-serif;
+            color: #000;
+        }
+    </style>
+{% endblock %} 

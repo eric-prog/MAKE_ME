@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>studE</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Rajdhani:wght@500&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Sora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Sora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Open+Sans&family=Roboto+Condensed&family=Rowdies:wght@300&family=Sora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="back">
+        <div class="nav">
+            <ul class="nav-bar">
+                <li class="logo"><a href="{% url 'home' %}">MAKE_ME</a></li>
+                <li class="el"><a href="{% url 'conflict:top-100' %}">TOP 100</a></li>
+                <li class="el"><a href="{% url 'conflict:top-trend' %}">TOP Trending</a></li>
+                <li class="el"><a href="{% url 'conflict:all-top' %}">All Topics</a></li>
+                <li class="ele"><a href="{% url 'conflict:create' %}">Create Conflict</a></li>
+            </ul>
+        </div>
+        {% block content %}
+        {% endblock %}    
+    </div>
+</body>
+</html>

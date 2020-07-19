@@ -1,0 +1,46 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="arg-create">
+        <h1>Create studE</h1> 
+        <form class="arg-form" action="{% url 'conflict:create' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input class="cbtn" type="submit" value="Create">
+        </form>  
+    </div>
+    <style>
+        .arg-create{
+            text-align: center;
+            display: inline-block;
+
+        }
+        .arg-create h1{
+            margin-left: 11%;
+            font-size: 3em;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-family: 'Sora', sans-serif;
+            color: #fff;
+        }
+        .arg-create .arg-form{
+            margin-left: 13%;
+        }
+        .arg-create .arg-form input{
+            width: 100%;
+            text-align: center;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            font-size: 2em;
+        }
+        .arg-create .arg-form .cbtn{
+            background-color: aquamarine;
+            color: black;
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: none;
+            border: none;
+        }
+    </style>
+    <script src="{% static 'js/slugify.js' %}"></script>
+{% endblock %} 

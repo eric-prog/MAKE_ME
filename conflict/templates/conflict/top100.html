@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+    <div class="top-100">
+        <h1 class="top100h1">TOP 100</h1>
+        {% for arg in args %}
+            <div class="top-box">
+                <h1><i class="fa fa-star" aria-hidden="true"></i></h1>
+                <h1 class="top100title">{{ arg.title }}</h1>
+                <p class="info">{{ arg.body }}</p>
+                <p><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>1</p>
+                <p><i class="fa fa-heart fa-2x" aria-hidden="true"></i>1</p>
+                <p><i class="fa fa-users fa-2x" aria-hidden="true"></i>1</p>
+                <p><i class="fa fa-eye fa-2x" aria-hidden="true"></i>1</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
